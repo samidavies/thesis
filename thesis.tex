@@ -1,0 +1,348 @@
+\documentclass[12pt]{book}
+
+\usepackage{hyperref}
+\def\chapterautorefname{Chapter}
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Section}
+\def\subsubsectionautorefname{Section}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
+\algnewcommand\Not{\textbf{not} }
+\newcommand{\algorithmautorefname}{Algorithm} % autoref
+
+\usepackage{adjustbox}
+\usepackage[headings]{fullpage}
+\usepackage{xargs}
+\usepackage{xspace}
+\usepackage[doublespacing]{setspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphics, subfigure, float, algpseudocode, algorithm}
+\usepackage{fp, calc}
+\usepackage{mdwlist}
+\usepackage{amscd,amsthm}
+\usepackage{amsfonts, amssymb}
+\usepackage{amsmath}
+%\usepackage{fullpage} % Should come right after \documentclass kommen
+
+
+
+
+% Special symbols, etc.
+% \usepackage{amssymb,amsbsy,latexsym}
+% \usepackage{amsmath}
+
+%\usepackage{hyperref}
+%\def\url#1{URL-MISSING
+%\usepackage[sectionbib]{chapterbib}
+%\usepackage[style=alphabetic,backend=biber]{biblatex}
+%\usepackage[refsection=chapter,style=alphabetic,backend=bibtex]{biblatex}
+%\addbibresource{IntOpt-and-Lattices.bib}
+
+% Encoding settings
+% \usepackage[latin1]{inputenc}
+% %\usepackage[ngerman]{babel}
+% \usepackage[T1]{fontenc} % IMPORTANT: Before loading fonts
+% %\usepackage{mathpple} % Palatino Fonts
+% \usepackage{fourier}
+% \usepackage{bm}
+% AMS Math packages
+
+
+
+% Bibliography
+%\usepackage[authoryear]{natbib}
+
+%\usepackage{natbib}
+
+%\usepackage{bibgerm}
+%\usepackage[numbers]{natbib}
+
+%\usepackage{cite}
+
+% Graphics
+% \usepackage[dvips]{graphicx,epsfig,color}
+%\usepackage{subfigure}
+%\usepackage{pstricks}
+%\usepackage{pst-node} 
+% \usepackage{pst-plot} (MIGHT NEED)
+%\usepackage{pst-math}
+% \usepackage{pst-all} (MIGHT NEED)
+%\usepackage{pst-3dplot}
+% \usepackage{pstricks-add,pst-func} (MIGHT NEED)
+% \newpsobject{showgrid}{psgrid}{subgriddiv=1,griddots=10,gridlabels=6pt} (MIGHT NEED)
+% \usepackage{comment,verbatim}
+
+\newtheoremstyle{theorem}{1em}{1em}{\slshape}{0pt}{\bfseries}{.}{ }{}
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{claim}[theorem]{Claim}
+
+\algdef{SE}[SUBALG]{Indent}{EndIndent}{}{\algorithmicend\ }%
+\algtext*{Indent}
+\algtext*{EndIndent}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem*{remark*}{Remark}
+%\newtheorem{algorithm}{Algorithm}
+
+\def\rem#1{{\marginpar{\raggedright\scriptsize #1}}}
+
+\providecommand{\setN}{\mathbb{N}}
+\providecommand{\setZ}{\mathbb{Z}}
+\providecommand{\setQ}{\mathbb{Q}}
+\providecommand{\setR}{\mathbb{R}}
+\providecommand{\setC}{\mathbb{C}}
+\providecommand{\setF}{\mathbb{F}}
+\newcommand{\E}{\mathop{\mathbb{E}}}
+% \renewcommand{\qedsymbol}{\includegraphics[scale=0.3][santaqed.png]}
+
+\newcommand{\vol}{\textrm{vol}}
+% \renewcommand{\span}{\textrm{span}}
+\newcommand{\conv}{\textrm{conv}}
+\newcommand{\cone}{\textrm{cone}}
+
+% \psset{linewidth=1pt, arrowsize=6pt} (MIGhT NEED)
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ \theoremstyle{definition}
+ \newtheorem{definition}{Definition}
+  \theoremstyle{plain}
+  \newtheorem{lem}{Lemma}
+  \theoremstyle{plain}
+  \newtheorem{cor}{Corollary}
+  \theoremstyle{plain}
+  \newtheorem{thm}{Theorem}
+
+%\newcounter{exercise}
+
+\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{example}[theorem]{Example}
+%\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+
+\newtheorem{openquestion*}{Open Question}
+\theoremstyle{theorem}
+
+%\newtheoremstyle{theorem}{1em}{1em}{\slshape}{0pt}{\bfseries}{.}{ }{}
+%\theoremstyle{theorem}
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{question}{Question}
+
+        % \def\drawRect#1#2#3#4#5{
+        %    \FPeval{\x2}{(#2) + (#4)} 
+        %    \FPeval{\y2}{(#3) + (#5)} 
+        %    \pspolygon[#1](#2,#3)(\x2,#3)(\x2,\y2)(#2,\y2)
+        % }
+
+% \psset{nodesep=0.8pt}
+
+%% Takes care, that preview-latex shows a preview of this environment
+\usepackage[displaymath,textmath,sections,graphics, subfigure, floats]{preview} 
+%%\PreviewEnvironment{enumerate} % Attention: Do not use comma-seperated lists here 
+%%\PreviewEnvironment{itemize}
+%%\PreviewEnvironment{theorem} 
+%%\PreviewEnvironment{lemma} 
+%\PreviewEnvironment{myproblem}
+%%\PreviewEnvironment{algorithm} 
+%\PreviewEnvironment{defn} 
+\PreviewEnvironment{center} 
+%\PreviewEnvironment{pspicture} 
+% -------
+% REMARK: 
+% IF Emacs crashes on start of Preview-latex, mark smaller regions and click on 
+% Preview -> (or toggle) at point
+% -------
+
+% \definecolor{augpathgray}{gray}{0.5} % 0=black, 1=white
+
+\usepackage{calrsfs} % changes mathcal symbols in math
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+\newcommand{\La}{\mathcal{L}}
+\newcommand{\Lb}{\pazocal{L}}
+\newcommand{\calI}{\pazocal{I}}
+\newcommand{\poly}{\operatorname{poly}}
+\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\p}{\mathsf{P}}
+\newcommand{\Q}{\mathsf{Q}}
+\newcommand{\R}{\mathsf{R}}
+\newcommand{\Prec}{\mathsf{prec}}
+\newcommand{\Intervals}{c\mathsf{-intervals}}
+\newcommand{\dup}{\mathsf{dup}}
+\newcommand{\Cmax}{C_{\mathsf{max}}}
+\newcommand{\wjcj}{\sum w_j C_j}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+
+\usepackage[font={sf}]{caption}
+% \usepackage[subrefformat=parens]{subcaption} (MIGHT NEED)
+\usepackage{multirow}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{_build/}{figures/}}
+
+
+
+
+
+% \usepackage{fancyhdr}
+% \setlength{\headheight}{15.2pt}
+% \pagestyle{fancy}
+% \lhead{Max Willsey}
+% % \chead[<even output>]{<odd output>}
+% \rhead{\thechapter. \chaptername}
+
+\usepackage{libertine}
+\usepackage[scaled=.9]{DejaVuSansMono}
+
+\allowdisplaybreaks
+
+
+\def\mytitle{Improving Scheduling Algorithms via a Mathematical Perspective}
+\def\myauthor{Sami Davies}
+\def\year{2021}
+
+\title{\mytitle}
+\author{\myauthor}
+
+% \input{macros}
+
+\begin{document}
+\pagestyle{empty}
+
+% title and copyright pages
+\begin{center}
+  {\huge \mytitle}
+  \vfill
+
+  {\Large \myauthor}
+  \vfill
+
+  \begin{spacing}{1}
+    A dissertation \\
+    submitted in partial fulfillment of the \\
+    requirements for the degree of
+  \end{spacing}
+  \vfill
+
+  Doctor of Philosophy
+  \vfill
+
+  University of Washington \\
+  \year
+  \vfill
+
+  Reading Commitee: \\
+  Thomas Rothvoss, Chair \\
+Anna Karlin \\
+ Isabella Novik
+  \vfill
+
+  \begin{spacing}{1}
+    Program Authorized to Offer Degree: \\
+    Department of Mathematics
+  \end{spacing}
+  \clearpage
+
+  \textcopyright{} Copyright \year\\
+  \myauthor
+  \clearpage
+\end{center}
+
+\pagestyle{plain}
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+% abstract page
+\begin{center}
+  University of Washington \\[1em]
+  \textbf{Abstract}        \\[1em]
+  \mytitle                 \\[1em]
+  \myauthor                \\[1em]
+
+  % Supervisory Committee: \\[-0.5em]
+  % Luis Ceze, Chair \qquad
+  % Adriana Schulz   \qquad
+  % Zachary Tatlock  \\[-0.5em]
+  Chair of the Supervisory Committee: \\[-0.5em]
+  Thomas Rothvoss \\[-0.5em]
+  Department of Mathematics
+  \\[2em]
+\end{center}
+\input{abstract}
+
+\begin{spacing}{1.5}
+  \tableofcontents
+\end{spacing}
+
+\chapter*{Acknowledgments}
+
+To begin, it's hard for me to imagine a more capable and supportive advisor than Thomas. 
+Thomas taught me a lot about how to approach problems, what to do when I get stuck, and when to move on.
+He is also not only an exceptional researcher, but he always showed an incredible amount of patience, kindness, and humility in our work. 
+
+I received a great deal of mentorship from Janardhan Kulkarni during my Ph.D, and I thank Jana for his continued 
+honesty, guidance, and support as I move into postdoctoral life.
+Several works in this thesis are joint with Yihao Zhang and Jakub Tarnawksi, both of whom I was fortunate to work with and learn from.
+Jana and Jakub also hosted me at MSR during the summer of 2020; an experience for which I am grateful.
+While our work is not featured in this thesis, I am grateful to my coauthors Cyrus Rashtchian and Miki Racz 
+for their friendship and mentorship over the past several years.
+
+
+I made many friends in the Math department and CS theory group (and the PLSE group too), and I thank the students and faculty of both 
+for allowing me to fluidly move between the two at my whim. 
+Throwing it way back, people who really encouraged me to go to grad school and then study TCS were
+Bill Hrusa, Brendan Sullivan, Lev Reyzin, and Jeremy Kun.
+I thank my family---especially my sister, Addie---for supporting me as I live far away and do something they don't really understand.
+And lastly, to Max, thank you for helping me find balance in life over the past 5 years.
+
+
+\begin{center}
+    \textbf{DEDICATION}
+
+
+\emph{to Mr. Raymond Kreiser}
+
+
+\end{center}
+
+
+
+
+\clearpage
+
+\pagestyle{headings}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\renewcommand{\chaptermark}[1]{\markboth{\sc{\chaptername\ \thechapter.\ #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\sc{\thesection.\ #1}}{}}
+\input{chapters/intro/intro}
+\input{chapters/santaclaus/santaclaus}
+\input{chapters/scheduling1/scheduling1}
+\input{chapters/scheduling2/scheduling2}
+
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\singlespacing
+\bibliographystyle{alpha}
+\bibliography{references}
+
+\end{document}

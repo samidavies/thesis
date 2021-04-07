@@ -1,0 +1,349 @@
+\chapter{Introduction and Background}
+
+
+
+Many optimization problems can be modelled as linear programs of the form $\max_x\{c^T x | Ax \leq b\}$.
+There are methods to solve linear programs efficiently and obtain a fractional solution, 
+but often any valuable $x$ is integral. 
+However, finding optimal integral solutions is theoretically intractable.
+In designing linear program relaxations, we define that \emph{integrality gap} of an instance
+to be the maximum ratio between the optimal objective value of the integral solution for that instance and the optimal objective value of 
+the relaxation for that instance.
+The integrality gap is the standard way of measuring 
+how well a linear program actually captures the problem. 
+
+We accept that it is extremely likely that there exists a separation 
+between the set of ``easy'' and the set of ``hard'' problems, i.e. those for which we can always find an optimal solution in time polynomial in the 
+size of the problem, and those for which we cannot. 
+Instead, we work towards obtaining approximate solutions efficiently. 
+An \emph{$\alpha$-approximation algorithm} for an optimization problem is
+an algorithm which given any instance of the problem is guaranteed to return a solution whose value is
+within an $\alpha$ factor 
+of the value of the optimal solution, within time polynomial in the size of the instance.
+
+Problems that are considered in theoretical computer science from the measurement of approximation algorithms 
+are often motivated from practical situations. 
+But it is worth noting that in the definition of an $\alpha$-approximation algorithm, 
+we require that the algorithm obtains a solution whose value is only $\alpha$ off for \emph{any} input.
+Depending on your persuasion, this may seem like a very strong definition, and maybe impractical... 
+perhaps the inputs that make algorithm design difficult are contrived or never really arise in practice. 
+So we have this---at first glance---strange phenomenon; we motivate a problem by saying that we want to study it because it is important in practice,
+but we measure our success with a potentially impractical definition of it.
+
+Point being that from my perspective, the stuff that I cared about and focused for the past several years,
+ the design and analysis of approximation algorithms is all about the math, 
+specifically all about what mathematical structures can we superimpose onto a hard problem in order to make a little more sense 
+of why it is indeed hard. 
+Runtime, so long as it is polynomial in the instance size, is not large concern for this work. 
+
+
+
+
+\bigskip
+
+We focus on two specific NP-hard problems in this paper: Santa Claus, also known as Restricted Max-Min Fair Allocation, and scheduling 
+with precedence constraints and communication delays.
+
+\section{The Santa Claus problem}
+
+In the \emph{Santa Claus problem}, the objective is to allocate gifts to children in such a way that the minimum value of any child is maximized. 
+We assume that child $a \in A$ has value $p_{a,i}$ for item $i \in I$ and that a child's value is the sum of the values of the gifts they receive. 
+Formally, we seek an assignment $\phi: I \rightarrow A$ such that $\min_{a \in A} \sum_{\phi^{-1}(a)} p_{a,i}$ is maximized. 
+Let $m$ denote the number of children and $n$ the number of gifts. 
+In Santa Claus, we assume that $p_{a,i} \in \{0,p_i\}$, i.e if two children both want to receive a gift, then they both value it equally.
+We will refer to the unrestricted version of MMFA occasionally for background, 
+where in the unrestricted version $p_{a,i}$ does not necessarily need to belong to $\{0,p_i\}$.
+
+\subsection{Previous work on Santa Claus}
+
+
+It is NP-hard to approximate Santa Claus within 
+a factor less than 2 \cite{BezakovaD05}. 
+Though interestingly, the known approximation factors for upper bounds wildly differ between the 
+restricted and unrestricted cases. 
+Before our work, constructive methods for both the restricted and unrestricted versions of 
+Max-Min Fair Allocation in some way use the existence of a solution to an exponentially large
+\textit{configuration linear program}  \cite{SantaClaus-BansalSviridenko-STOC2006, AlgoForSantaClaus-AnnamalaiKalaitzisSvenssonSODA15, AS10, MaxMinFairAllocation-ChakrabartyChuzhoyKhannaFOCS09, ChengM18}.
+ 
+%The CLP is a strong relaxation with an exponential number of variables, but it perhaps does not invoke much intuition,
+%as it is brute forcing which bundles of gifts satisfy children. 
+For a CLP with objective value $T$, 
+the variables in the CLP take the form $x_{a,C}$, 
+which represents whether agent $a$ receives the subset of items $C \in  \pazocal{C}(a,T)$, 
+those sets of items bringing agent $a$ at least value $T$:
+\begin{align*}(CLP) \qquad
+\sum_{C \in \pazocal{C}(a,T)} x_{a,C} &\geq 1  \qquad \forall a \in A \\
+\sum_{C: i \in C} \sum_{a} x_{a,C} &\leq 1 \qquad \forall i \in I \\ 
+x &\geq 0.
+\end{align*}
+
+The CLP was introduced by Bansal and Sviridenko when studying the Santa Claus problem. 
+They use it to give an $O(\log \log m / \log \log \log m)$- approximation for the Santa Claus problem  \cite{SantaClaus-BansalSviridenko-STOC2006}. 
+Since then, progress has been made towards better constant factor approximations for the Santa Claus problem, 
+with Feige proving an (unspecified constant) $O(1)$-approximation and Annamalai, Kalaitzis, and Svensson proving 
+a 12.3-approximation \cite{ConstantIntegralityGapSantaClaus-Feige-SODA2008, AlgoForSantaClaus-AnnamalaiKalaitzisSvenssonSODA15}
+The CLP for the Santa Claus problem has an integrality gap of $3.808$ \cite{CM19}. 
+
+In contrast, the CLP for unrestricted Max-Min Fair Allocation has an integrality gap of $\Omega(\sqrt{m})$. 
+Asadpour and Saberi give an $O(\log^3 m \sqrt{m})$-approximation through a beautiful randomized algorithm. 
+Chakrabarty, Chuzhoy, and Khanna cleverly beat the $\sqrt{m}$ gap to obtain an $\tilde{O}(n^{\varepsilon})$-approximation 
+in $n^{1/\varepsilon}$ time for $\varepsilon =\Omega \left (  \log \log n / \log n \right )$
+by iteratively using solutions to the LP, 
+whose gaps become smaller in each iteration\footnote{
+Note that some results are in terms of $m$, and some in terms of $n$. Though in general
+we think of $n$ as much larger than $m$, and in fact, 
+the results of Chakrabarty, Chuzhoy, and Khanna hold replacing $n$ with $m$ for constant $\varepsilon.$
+}. 
+From these works, it is helpful to note that 
+the algorithms rely on assigning heavy and light pairs, meaning those with large versus small $p_{a,i}$,
+differently \cite{AlgoForSantaClaus-AnnamalaiKalaitzisSvenssonSODA15,MaxMinFairAllocation-ChakrabartyChuzhoyKhannaFOCS09}. 
+Similar ideas have been used in Makespan Scheduling \cite{MakespanScheduling-Svensson-STOC11, SchedulingUnrelatedParallelMachines-LenstraShmoysTardos-FOCS87}.
+
+
+More generally, studying Max-Min Fair Allocation can be viewed from the lens of investigating sufficient conditions for 
+perfect matchings in bipartite hypergraphs. 
+A hypergraph $\pazocal{H} = (V \dot\cup W, \pazocal{E})$ is called bipartite if for all
+$e \in \pazocal{E}$, $|e \cap V|=1$, and hyperedges $F \subset \pazocal{E}$ form a (left) perfect matching 
+if they are disjoint and every node in $V$ is contained in exactly one edge in $F$.
+In particular, a solution to the CLP is a fractional perfect matching on the hypergraph 
+$ \left(A \dot\cup I, \bigcup_{a \in A}\pazocal{C}(a,T) \right)$.  
+Finding perfect matchings in bipartite hypergraphs is in general NP-hard, though
+Haxell's condition defines a sufficient condition:
+\begin{theorem} \cite{HypergraphMatchingsHaxell95}
+Let $\pazocal{H} = (V \dot\cup W, \pazocal{E})$ be a bipartite hypergraph with $|e| \leq r$ for all $e \in \pazocal{E}$.
+Then either $\pazocal{H}$ contains a (left) perfect matching or there are subsets $V' \subset V$ and $W' \subset W$
+so that all hyperedges incident to $V'$ intersect $W'$ and $|W'| \leq (2r-3)(|V'|-1)$.
+\end{theorem}
+While the proof of Haxell's condition relies on a potentially exponential time argument, 
+Annamalai made the argument polynomial by restricting edge sizes to be uniform and allowing some slack in the inequality \cite{FindingPerfectMatchingsInHypergraphs-Annamalai-SODA16}.
+His argument, in addition to the one made in the 12.3-approximation algorithm by Annamalai, Kalaitzis, and Svensson,
+take Haxell's argument and make it polynomial by introducing an augementing tree. 
+This generalizes the notion of an augmenting path used to find a maximum matchings in bipartite graphs.
+Instead of swapping every other edge in an augmenting path, as is the case for a bipartite graph,
+the augmenting tree swaps sets of alternating hyperedges to find more space in the hypergraph.
+
+
+
+
+
+
+
+
+% Given a set of agents and a set of goods, a natural question 
+% is how does one distribute the goods in a way that is fair? 
+% While the notion of algorithmic fairness is now a rich area of theoretical computer science, 
+%  Max-Min Fair Allocation presents a simple notion of fairness that leads to a practical combinatorial optimization problem.
+%  In \emph{Restricted Max-Min Fair Allocation},
+% the objective is to allocate items to agents in such a way that the minimum value of any agent is maximized.
+% We assume that agent $a \in A$ has value $p_{a,i}$ for item $i \in I$, where $p_{a,i} \in \{0,p_i\}$ for $p_i \in \mathbb{Z}^+$, and that an agent's value is the sum of the values of the items they receive.
+% Formally, we seek an assignment $\phi :I \rightarrow A $ such that $\min_{a \in A} \sum_{i \in \phi^{-1}(a)}p_{a,i}$ is maximized. 
+
+% Let $m$ denote the number of agents and $n$ the number of items.
+% This problem is affectionately known as the Santa Claus problem, 
+% with lingo swapping the terms ``agents'' and ``items'' for ``children'' and ``presents''.
+% More generally, 
+% Restricted Max-Min Fair Allocation can be viewed
+% %  from the lens of investigating
+%  as a problem of finding sufficient conditions for 
+% perfect matchings in bipartite hypergraphs. 
+% A hypergraph $\mathcal{H} = (V \dot\cup W, \mathcal{E})$ is called bipartite if for all
+% $e \in \mathcal{E}$, $|e \cap V|=1$, and hyperedges $F \subset \mathcal{E}$ form a (left) perfect matching 
+% if they are disjoint and every node in $V$ is contained in exactly one edge in $F$.
+% In particular, a solution to the configuration linear program is a fractional perfect matching on the hypergraph 
+% $ \left(A \dot\cup I, \bigcup_{a \in A}\mathcal{C}(a,T) \right)$.  
+% While finding perfect matchings in bipartite hypergraphs is in general NP-hard, 
+% in some classes of hypergraphs they can be found efficiently~\cite{AKS17, Annamalai15}.
+% Such algorithms generalize the notion of an augmenting path used to find a maximum matchings in bipartite graphs.
+
+
+\subsection{Our contribution }
+In my work on the Santa Claus problem with Thomas Rothvoss and Yihao Zhang,
+we exploit an underlying matroid to design a clean bipartite hypergraph matching algorithm \cite{DaviesRZ20}. 
+This leads to an improved approximation factor (from 12.3 to $4+ \varepsilon$) compared to the solution of a new linear program relaxation
+\footnote{After obtaining our results, 
+we learned that Cheng and Mao simultaneously and independently obtained 
+a $6 + \varepsilon$ approximation to the Santa Claus problem
+by altering the algorithm by Annamalai, Kalaitzis and Svensson \cite{ChengM18}.  
+Using ideas established by Asadpour, Feige, and Saberi, they further improved this
+to a $4 + \varepsilon$ approximation \cite{CM19, SantaClaus-AsadpourFeigeSaberi-APPROX2008}.}.
+
+We build off the idea of separating gifts by their values by designating a gift $i$ as either large or small, depending on its value $p_i$. 
+Our linear program has only $O(n^2)$ many variables and constraints and uses this distinction between large and small gifts. 
+In particular, we introduce an expansion constraint, 
+forcing children who do not entirely receive a large gift to fractionally receive at least $T$ small gifts, 
+for $T$ the optimal objective value. Let
+$I_L := \{ i \in I \mid p_i > \delta_2 T\}$ denote the large gifts
+and $I_S := \{ i \in I \mid p_j \leq \delta_1 T\}$ denote the small gifts
+for constants $0 < \delta_1 \leq \delta_2 < 1$ such that
+% For fixed parameters $1 \geq \delta_2 \geq 1/4 > \delta_1 \geq 0$, where 
+all gifts have values in $[0,\delta_1  T] \cup (\delta_2  T,T]$. 
+$A_i$ denotes the set of children who wish to receive gift $i$, in other words the set of $a \in A$ such that $p_{a,i} \neq 0$.
+Let $P(T,\delta_1,\delta_2)$ be the set of vectors $z \in \mathbb{R}_{\geq 0}^{J \times M}$ satisfying
+\begin{eqnarray*}\label{eq:CompactLPforSC} \qquad
+        \sum\limits_{i \in I_S: a \in A_i} p_i z_{ai} &\geq& T \cdot \Big( 1-\sum_{i \in I_L: a \in A_i} z_{ai}\Big)  \qquad \forall a \in A \\
+        \sum\limits_{a \in A_j}z_{ai} &\leq& 1 \hspace{4.0cm} \forall i \in I \\
+        z_{ai} &\leq& 1-\sum_{i' \in I_L: a \in A_{i'}} z_{ai'} \hspace{1.5cm} \forall i \in I_S \; \forall a \in A_i.
+\end{eqnarray*}
+
+
+The separation between large and small gifts was critical for our approach as it allowed us to define an underlying matroid.
+Recall a matroid is a structure generalizing the notion of linear independence in vector spaces,
+and in particular their independent sets have useful exchange properties. 
+Formally, $\pazocal{M} = (X,\pazocal{I})$ is a matroid with groundset $X$ and 
+independent sets $\pazocal{I} \subseteq 2^X$ if the following hold:
+\begin{itemize}
+\item \emph{Non-emptyness}: $\emptyset \in \pazocal{I}$; 
+\item \emph{Monotonicity}: For $Y \in \pazocal{I}$ and $Z \subseteq Y$ one has $Z \in \pazocal{I}$; 
+\item \emph{Exchange property}: For all $Y,Z \in \pazocal{I}$ with $|Y| < |Z|$ there is an element $z \in Z \setminus Y$ so that $Y \cup \{ z\} \in \pazocal{I}$.
+\end{itemize}
+The bases of a matroid, denoted by $\pazocal{B}(\pazocal{M})$, are all inclusion-wise maximal independent sets, and
+the convex hull of all bases is called the base polytope, denoted by $P_{\pazocal{B}(\pazocal{M})} := \text{conv}\{ \chi(S) \in \{0,1\}^X \mid S\text{ is basis}\}$,
+where $\chi(S)$ is the characteristic vector of $S$.
+
+
+Now consider a bipartite graph $G = (V \dot{\cup} W,E)$ with ground set $V$ on one side and
+a set of resources $W$ on the other side; each resource $w \in W$ has
+value $p_w \geq 0$. 
+We define the problem \emph{Matroid Max-Min Allocation}, 
+where the goal is to find a basis $S \in \pazocal{B}(\pazocal{M})$ and an 
+assignment $\sigma : W \to S$ with $(\sigma(w),w) \in E$ so that $\min_{v \in S} \sum_{w \in \sigma^{-1}(v)} p_w$ 
+is maximized. 
+For $T \geq 0$ the target objective function value, 
+we define a linear programming relaxation $Q(T)$ as the set of vectors 
+$(x,y) \in \mathbb{R}_{\geq 0}^X \times \mathbb{R}_{\geq 0}^E$
+satisfying the constraints:
+\begin{eqnarray*}
+ x \in P_{\pazocal{B}(\pazocal{M})};& \quad 
+ \sum_{w \in N(v)} p_wy_{vw} \geq T \cdot x_v \;  \forall v \in V;\\
+  \quad  y(\delta(w)) \leq 1 \;
+  \forall w \in W;& \qquad \qquad \qquad y_{vw} \leq x_v \; \forall (v,w) \in E.
+\end{eqnarray*} 
+
+Here, the decision variable $x_v$ expresses whether element $v$ should be part of the basis, and
+$y_{vw}$ expresses whether resource $w$ should be assigned to element $v$. We abbreviate 
+$N(v)$ for the neighborhood of $v$ and $y(\delta(w))$ for $\sum_{v : (v,w) \in E} y_{vw}$.
+Our main technical result is the folllowing: 
+\begin{theorem}\label{thm:MainMatroidAlgorithm} \cite{DaviesRZ20}
+Suppose $Q(T) \neq \emptyset$ and membership in the matroid can be tested in time polynomial in $n$.
+Then for any $\varepsilon>0$ one can find
+ \[
+   (x,y) \in Q \left (
+    \left (\frac13 - \varepsilon \right ) \cdot T - \frac13 \cdot \max_{w \in W} p_w \right )
+ \] 
+with both $x$ and $y$ integral in time $n^{\Theta_{\varepsilon}(1)}$, where $n := |V| + |W|$. 
+\end{theorem}
+
+
+Viewing the set of children and gifts as parts of a bipartite graph, 
+the sets of children which can be given a large gift forms a matchable set matroid, $\pazocal{M}$.
+Thus children who do not receive a large gift form bases of $\pazocal{M}^*$, the co-matroid of $\pazocal{M}$.
+Set $\delta_1$ so that $\delta_1 \cdot T$ is the largest gift value that is at most
+$\frac14 \cdot T$, and set $\delta_2$ so that $\delta_2 \cdot T$ is the smallest gift value that is at least $\frac14 \cdot T$. 
+In an instance of the Santa Claus problem where the optimal integral solution has value $T$, 
+we transform a solution in $P(T,\delta_1,\delta_2)$ into a solution in $Q(T)$, with $\max_{w \in W} p_w = \delta_1 \cdot T$.
+
+By using properties of matroids, 
+we simplify a bipartite hypergraph matching algorithm, which builds an augmenting tree,
+of Annamalai, Kalaitzis, and Svensson to find an assignment of small gifts to a basis of $\pazocal{M}^*$ \cite{AlgoForSantaClaus-AnnamalaiKalaitzisSvenssonSODA15}.
+Using Theorem~\ref{thm:MainMatroidAlgorithm}, each child receiving only small gifts has value at least
+$\left (\frac13 - \varepsilon \right ) \cdot T - \frac13 \cdot \delta_1 \cdot T \geq \left (\frac14 - \varepsilon \right ) \cdot T$. 
+The remaining children who received no small gifts get a single large gift, with value at least $\delta_2 \cdot T \geq \frac14 \cdot T$,
+guaranteeing every child at least $\frac14 - \varepsilon$ of the optimal value.
+Interestingly, in the case where the distribution of gift values is bimodal and the gap between $\delta_1$ and $\delta_2$ is large, 
+our approximation factor improves.
+In the most extreme case when gift values are either 1 or $T$, 
+our algorithm returns a $3 + \varepsilon$ approximation. 
+
+
+
+% We alter an algorithm from [cite] which given a bipartite graph $G=(U,V,E)$, with $U$ the ground set of a matroid and $V$ unit-valued resources we wish to allocate to $U$, uses hypergraph matching techniques to find a basis $S$ of a matroid and a hypergraph matching $M$ with large enough edges covering $S$. Applying this more general framework to $\mathcal{M}^*$, we find a set of children which will only receive small gifts, and an assignment of small gifts to them. Properties of matroids and the the matroid polytope are essential in our construction a clean, correct argument.
+
+% Just as in [cite], we construct an \textit{augmenting tree}. 
+% This is a collection of hyperedges found layer by layer, where every other layer belongs in the current hyper matching. algorithm swaps sets of edges in the augmenting tree to find more space in the hypergraph. The edges are swapped in such a way that the set of children covered by the matching is always independent with respect to the matroid.
+
+
+
+
+
+\section{Scheduling with Communication Delays} 
+
+
+Distributing tasks onto processors occurs in many areas of computing.
+Frequently, some tasks use as their inputs the outputs of other tasks. 
+The cost of transferring data between processors can be expensive, 
+e.g. in data center scheduling and Deep Neural Network training~\cite{coflow, zhao2015rapier}. 
+This dependence and latency in scheduling is modelled with precedence constraints and communcation delays.
+
+% The above precedence-constrained scheduling problem models the task of distributing workloads onto multiple processors or servers, which is ubiquitous in computing. This basic setting takes the dependencies between work units into account, but not the data transfer costs between machines, which is critical in applications. A precedence constraint j ≺ j′ typically implies that the input to j′ depends on the output of j. In many real-world scenarios, especially in the context of scheduling in data centers, if j and j′ are executed on different machines, then the communication delay due to transferring this output to the other machine cannot be ignored. This is an active area of research in applied data center scheduling literature, where several new abstractions have been proposed to deal with communication delays [CZM+11, GFC+12, HCG12, SZA+18, ZZC+12, ZCB+15, LYZ+16]. Another timely example is found in the parallelization of Deep Neural Network training (the ma- chines being accelerator devices such as GPUs, TPUs, or FPGAs). There, when training the network on one sample/minibatch per device in parallel, the communication costs incurred by synchronizing the weight updates in fact dominate the overall running time [NHP+19]. Taking these costs into account, it turns out that it is better to split the network onto multiple devices, forming a “model- parallel” computation pipeline [HCB+19]. In the resulting device placement problem, the optimal split crucially depends on the communication costs between dependent layers/operators.
+
+
+
+Given a set of $n$ jobs, and a set of $m$ machines on which the jobs can be performed, 
+scheduling algorithms find an assignment of jobs to machines and time slots.
+The inclusion of \emph{precedence constraints} model the flow of jobs as a directed acyclic graph, where 
+ if there is an edge in the DAG from $j_1$ to $j_2$, denoted $j_1 \prec j_2$, then $j_1$ must be completed before any machine can start to process $j_2$.
+The inclusion of  \emph{communication delays} model the latency between dependent jobs, 
+where if $j_1 \prec j_2$ and $j_2$ is performed on a different machine than $j_1$, then at least $c_{j_1,j_2}$ time 
+units must pass after the completion of $j_1$ before any machine can start to process $j_2$.
+The \emph{makespan} of a schedule is the time that the last machine processes its final job.
+
+The PI  and her coauthors, Janardhan Kulkarni, Thomas Rothvoss, Jakub Tarnawski, and Yihao Zhang, have been studying the problem 
+of scheduling  with 
+precedence constraints and uniform communication delays, which is when $c_{j_1,j_2}=c$ for all $j_1,j_2$, on identical machines. 
+In the identical machine setting, all machines have the same speed and are able to process every job. 
+% In the objective of minimizing makespan, where the makespan is denoted $C_{\textrm{max}}$ for maximum completion time.
+Before their work, simple arguments obtained $O(c)$-approximations for the objective of minimizing makespan~\cite{GrahamListScheduling1966, GiroudeauKMP08}.
+While there are tighter bounds when $c=1$, little else was known for when $c$ is large, which is the parameter setting arising in practice~\cite{MunierKonig, HanenMunier73Apx}.
+Obtaining better algorithms to the problem is in a list of the top 10 open problems in scheduling theory that was proposed by Schuurman and Woeginger~\cite{SW99a}.
+More recently in a 2017 survey talk, Bansal described scheduling with precedence constraints and communication delays 
+as ``not understood at all" and ``almost completely open"~\cite{Bansalmapsp}.
+
+% The PI has worked on scheduling in the presence of precedence constraints and communication delays
+%  with Janardhan Kulkarni, Thomas Rothvoss, Jakub Tarnawski, and Yihao Zhang. 
+% For the base problem of $P_{\infty} \mid p_j=1, c \mid C_{\textrm{max}}$
+% (minimizing makespan with unit processing times and communication delays of length $c$ on arbitrarily many machines),
+The PI and her coauthors obtain a $O(\log(m) \cdot \log(c))$-approximation algorithm for the uniform communication delays problem on identical machines, 
+making significant progress on the question posed by Schuurman and Woeginger~\cite{DKRTZ20}. 
+% These results extend to include arbitrary processing times and a fixed number of machines.
+They use a \emph{Sherali-Adams hierarchy} of a linear program, 
+which introduces additional variables and constraints to obtain a tighter relaxation.
+% , in order to obtain 
+% a locally consistent probability distribution on pairs of jobs.
+Using the LP solution, they construct a semimetric on the set of jobs, where jobs close in the semimetric are likely to be scheduled on the same machine
+ and within $c$ time slots from each other. 
+Equipped with a semimetric, the authors design an algorithm that uses as a subroutine a clustering algorithm by Calinescu, Karloff, and Rabani to schedule a subset of jobs~\cite{DBLP:journals/siamcomp/CalinescuKR04}.
+%  takes as input the set of jobs that have completion time in a $O(c/ \log(c))$-length interval
+% according to the LP solution and
+% schedules a constant fraction of these jobs 
+% while respecting precedence constraints~\cite{CKR01}. 
+Repeating this iteratively and inserting $c$ idle time slots between each iteration accounts for the communication delay between jobs in different iterations.
+
+The PI and her coauthors also obtained polylogarithmic approximation algorithms for the more general setting of
+% of scheduling with precedence constraints and communication delays on 
+related machines with the objective of minimizing the \emph{weighted sum of completion times}~\cite{DaviesKRTZ21}.
+This objective is minimizing $\sum_j w_j C_j$, for $w_j$ the weight of job $j$, given as input, and
+$C_j$ the completion time of job $j$.
+% (referred to as $Q \mid p_j=1, c \mid  \sum_j w_j C_j$, for $C_j$ the completion time of job $j$).
+In the related machine setting, the set of machines are partitioned into speed classes, where machines in speed class $\ell$
+process job $j$ in time $p_j / s_\ell$.
+% Nothing was known for this setting before our work.
+This work generalizes the Sherali-Adams framework established in their previous paper, though there are new technical challenges.
+For the objective of minimizing makespan, it was sufficient to determine in which $c$-length time interval a job is scheduled. 
+However, for the weighted sum of completion times objective, this is not careful enough; jobs that have very small fractional completion time by the LP 
+must be scheduled very early.
+Additionally, as opposed to the identical machines setting, the problem now involves assigning jobs to speed classes.
+The authors introduce more constraints into their LP and prove stronger structural insights about the Sherali-Adams solution.
+
+We consider the problem of scheduling jobs with precedence constraints on related machines
+to minimize the weighted sum of completion times,
+in the presence of {\em communication delays}.
+In this setting,
+denoted by $\Q \mid \Prec, c \mid \sum w_jC_j$,
+if two dependent jobs are scheduled on different machines,
+then at least $c$ units of communication delay time must pass between their executions.
+Our main result is an $O(\log^4 n)$-approximation algorithm for the problem.
+As a byproduct of our result, we also obtain an $O(\log^3 n)$-approximation algorithm for the problem of minimizing makespan  $\Q \mid \Prec, c \mid C_{\textrm{max}}$, which improves upon the $O(\log^5 n/\log \log n)$-approximation algorithm due to a recent work of  Maiti et al.~\cite{MRSSV}.
+
+
+
+[ADD LIKE 2 MORE PAGES ABOUT SCHEDULING IN HERE]

@@ -1,0 +1,62 @@
+\contentsline {chapter}{\numberline {1}Introduction and Background}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}The Santa Claus problem}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Previous work on Santa Claus}{3}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Our contribution }{5}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Scheduling with Communication Delays}{8}{section.1.2}
+\contentsline {chapter}{\numberline {2}Santa Claus}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{11}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Our contributions}{14}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}An algorithm for Matroid Max-Min Allocation}{15}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Intuition for the algorithm}{16}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}A detailed procedure}{18}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Correctness of the algorithm}{20}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Termination and runtime}{25}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Application to Santa Claus}{28}{section.2.3}
+\contentsline {section}{\numberline {2.4}Conclusion}{32}{section.2.4}
+\contentsline {chapter}{\numberline {3}Scheduling with Communication Delays on Identical Machines}{33}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{33}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Our Contributions}{36}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Independent work of Maiti {\em et al}}{37}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Our Techniques}{38}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}History of the Problem}{40}{subsection.3.1.4}
+\contentsline {paragraph}{Approximation algorithms.}{40}{section*.6}
+\contentsline {paragraph}{Hardness.}{41}{section*.7}
+\contentsline {paragraph}{Duplication model.}{41}{section*.8}
+\contentsline {section}{\numberline {3.2}Preliminaries}{42}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}The Sherali-Adams Hierarchy for LPs with Assignment Constraints}{42}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Semimetric Spaces}{45}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Approximation for $\mathsf {P}\infty \mid \mathsf {prec}, p_j=1, c\mathsf {-intervals}\mid C_{\qopname \relax m{max}}$}{49}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}The Linear Program}{50}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Scheduling a Single Batch of Jobs}{54}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}The Complete Algorithm for $\mathsf {P}\infty \mid \mathsf {prec}, p_j=1, c\mathsf {-intervals}\mid C_{\qopname \relax m{max}}$ }{58}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Reductions}{59}{section.3.4}
+\contentsline {section}{\numberline {3.5}Integrality Gap for the Compact LP}{66}{section.3.5}
+\contentsline {section}{\numberline {3.6}Minimizing Weighted Sum of Completion Times}{68}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}The linear program}{69}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}The Rounding Algorithm}{71}{subsection.3.6.2}
+\contentsline {chapter}{\numberline {4}Scheduling with Communication Delays on Related Machines}{77}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{77}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Our Contributions}{80}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Technical Challenges}{81}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Our Techniques and Algorithm Overview}{82}{subsection.4.1.3}
+\contentsline {paragraph}{Case I: Scheduling jobs with very small LP completion time.}{84}{section*.15}
+\contentsline {paragraph}{Case II: Scheduling jobs with lower-bounded LP completion time.}{85}{section*.16}
+\contentsline {paragraph}{Conclusion and reduction to general processing times.}{86}{section*.17}
+\contentsline {subsection}{\numberline {4.1.4}Outline}{87}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Preliminaries}{87}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}The Sherali-Adams Hierarchy for LPs with Assignment Constraints}{87}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Semimetric Spaces}{88}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Concentration}{88}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}The Linear Program and Its Properties}{89}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}The Linear Program}{89}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Properties of the LP}{91}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}The Rounding Algorithm for $\mathsf {Q}\mid \mathsf {prec}, p_j=1, c \mid \DOTSB \sum@ \slimits@ w_j C_j$}{96}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}First Batch Scheduling}{97}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Intermediate Batch Scheduling}{104}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}Proof of Theorem \ref {thm:RelatedMakespan}}{105}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Main Scheduling Subroutine}{105}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}The Complete Algorithm}{108}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Reductions}{110}{section.4.6}
+\contentsline {section}{\numberline {4.7}Makespan Minimization on Related Machines}{115}{section.4.7}
+\contentsline {section}{\numberline {4.8}Conclusion}{118}{section.4.8}
+\contentsline {chapter}{Bibliography}{119}{section.4.8}
