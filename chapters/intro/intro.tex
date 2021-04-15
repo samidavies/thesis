@@ -5,12 +5,18 @@
 Many optimization problems can be modelled as linear programs of the form $\max_x\{c^T x | Ax \leq b\}$.
 There are methods to solve linear programs efficiently and obtain a fractional solution, 
 but often any valuable $x$ is integral. 
-However, finding optimal integral solutions is theoretically intractable.
+Finding optimal integral solutions is theoretically intractable, 
+so instead we often take a fractional solution and devise some algorithm that \emph{rounds} 
+the fractional solution to an integral one. 
+The rounding algorithm is seen as decent if not too much is lost in the objective value from moving from the fractional solution to the integral one.
+
+
 In designing linear program relaxations, we define that \emph{integrality gap} of an instance
 to be the maximum ratio between the optimal objective value of the integral solution for that instance and the optimal objective value of 
 the relaxation for that instance.
 The integrality gap is the standard way of measuring 
 how well a linear program actually captures the problem. 
+
 
 We accept that it is extremely likely that there exists a separation 
 between the set of ``easy'' and the set of ``hard'' problems, i.e. those for which we can always find an optimal solution in time polynomial in the 
@@ -21,20 +27,45 @@ an algorithm which given any instance of the problem is guaranteed to return a s
 within an $\alpha$ factor 
 of the value of the optimal solution, within time polynomial in the size of the instance.
 
+Designing LPs with small integrality gap (small depends on the target approximation factor) can be difficult. 
+One normally begins by writing down the basic constraints that arise from the problem statement; let me call this the basic LP for now. 
+To judge the quality of that basic LP, the next step is to try and think of instances that might lead to a larger-than-desired integrality gap.
+If indeed there is an instance certifying that the integrality gap is large, then one has to come up 
+with additional constraints to add the LP that will make the eliminate the bad instances. 
+Even if there is an LP for which there are no obvious integrality gap instances, it might be that 
+it is difficult to come up with a way to round  
+Sometimes this ad hoc approach works relatively well, in that coming up with constraints to eliminate bad instances 
+is not too difficult given previous work or intuition or luck\footnote{In the Santa Claus problem, this ad hoc approach works well enough for our purposes!}.
+But other times, one either 
+\begin{itemize}
+\item(a) enters a vicious cycle of thinking up new integrality gap instances, then adding new constraints to get rid of the instances, 
+then thinking up more integrality gap instances, and so on and so forth until you die, or
+\item(b) (potentially after repeitions of (a)) is eventually unable to come up with integrality gap instances, 
+but also cannot do anything useful in the rounding or analysis. 
+\end{itemize}
+Appealing though these options may be, hierarchies can help avoid them. 
+
+
+
+Talk about hierarchies. Sherali Adams, constructing the compact LP, integrality gaps, use of triangle inequality in ARV.
+
+
+A (rambly, yet) brief sidebar follows.
 Problems that are considered in theoretical computer science from the measurement of approximation algorithms 
 are often motivated from practical situations. 
 But it is worth noting that in the definition of an $\alpha$-approximation algorithm, 
 we require that the algorithm obtains a solution whose value is only $\alpha$ off for \emph{any} input.
 Depending on your persuasion, this may seem like a very strong definition, and maybe impractical... 
 perhaps the inputs that make algorithm design difficult are contrived or never really arise in practice. 
-So we have this---at first glance---strange phenomenon; we motivate a problem by saying that we want to study it because it is important in practice,
-but we measure our success with a potentially impractical definition of it.
-
-Point being that from my perspective, the stuff that I cared about and focused for the past several years,
- the design and analysis of approximation algorithms is all about the math, 
-specifically all about what mathematical structures can we superimpose onto a hard problem in order to make a little more sense 
+So we have a---at first glance---strange juxtaposition, where we motivate a problem by saying it has practice,
+but we measure our success with a potentially impractical definition.
+From my perspective, the above is missing the point. 
+The design and analysis of approximation algorithms is, to me and to many others in the field, all about the math.
+Specifically, it is about studying what mathematical structures we can superimpose onto a hard problem in order to make a little more sense 
 of why it is indeed hard. 
-Runtime, so long as it is polynomial in the instance size, is not large concern for this work. 
+For that reason, runtime, so long as it is polynomial in the instance size, is not a large concern in the works featured here.
+Though it might be of concern to me someday, and there is a lot of meaningful work in approximation algorithms, TCS, and beyond that 
+takes runtime, memory, input characteristics, and other practical concern into consideration.
 
 
 

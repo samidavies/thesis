@@ -3,11 +3,11 @@ This document will discuss three problems that I worked on during my Ph.D.
 Chapter \ref{chapter: SC} contains my work on the Santa Claus problem, and
  Chapters \ref{chapter: S1} and \ref{chapter: S2} contain my work on scheduling with precedence constraints and communication delays.
 
-In the Santa Claus problem, Santa has a set of gifts, and he wants to distribute them among a set of children
-so that the least happy child is made as happy as possible. 
+In the \emph{Santa Claus problem}, Santa has a set of gifts, and he wants to distribute them among a set of children
+so that the least happy child is as happy as possible. 
 Child $i$ has value $p_{ij}$ for present $j$, where $p_{ij}$ is in $ \{ 0,p_j\}$.
 A modification of Haxell's hypergraph matching argument by Annamalai, Kalaitzis, and Svensson gives a $12.33$-approximation algorithm for the problem.
-In join work with Thomas Rothvoss and Yihao Zhang, we introduce a \emph{matroid} version of the Santa Claus problem. 
+In joint work with Thomas Rothvoss and Yihao Zhang, we introduce a matroid version of the Santa Claus problem. 
 While our algorithm is also based on the augmenting tree by Haxell, the introduction
 of the matroid structure allows us to solve a more general problem with cleaner methods.
 Using our result from the matroid version of the problem, we obtain a $(4+\varepsilon)$-approximation algorithm for Santa Claus.
@@ -17,16 +17,16 @@ in the presence of \emph{communication delays}.
 Here,
 if two jobs are dependent and scheduled on different machines,
 then at least $c$ units of time must pass between their executions.
-Even for a special case where an unlimited number of machines is available, the best known approximation ratio
-for even the simplest setting of minimizing makespan on an unlimited number of identical machines is $O(c)$.
-An outstanding open problem in the top-10 list by Schuurman and Woeginger and its recent update by Bansal
+Even for the special case where an unlimited number of identical machines are available, the best known approximation ratio
+for minimizing makespan is $O(c)$.
+An outstanding open problem in the top-10 list by Schuurman and Woeginger (and its recent update by Bansal)
 asks whether there exists a constant-factor approximation algorithm.
 In joint work with Janardhan Kulkarni, Thomas Rothvoss, Jakub Tarnawski, and Yihao Zhang,
  we prove a polynomial-time $O(\log c \cdot \log m)$-approximation algorithm
-for the problem of minimizing makepsan
-on $m$ identical machine, where $c$ is the communication delay.
+for the problem of minimizing makespan
+on $m$ identical machine, where $c$ is the communication delay; this work is presented in Chapter \ref{chapter: S1}.
 Our approach is based on a Sherali-Adams lift of a linear programming relaxation
 and a randomized clustering of the semimetric space induced by this lift. 
 We extend our work to the related machines setting and study the objectives of minimizing makespan 
 and minimizing the weighted sum of completion times. 
-Here, we also obtain polylogarithmic approximation algorithms.
+Here, we also obtain polylogarithmic approximation algorithms, and these results are presented in Chapter \ref{chapter: S2}.
