@@ -1,56 +1,58 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction and Background}{}% 1
 \BOOKMARK [1][-]{section.1.1}{The Santa Claus problem}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{Previous work on Santa Claus}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Our contribution }{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.1}{Previous work}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Our contribution}{section.1.1}% 4
 \BOOKMARK [1][-]{section.1.2}{Scheduling with Communication Delays}{chapter.1}% 5
-\BOOKMARK [0][-]{chapter.2}{Santa Claus}{}% 6
-\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.1.1}{Our contributions}{section.2.1}% 8
-\BOOKMARK [1][-]{section.2.2}{An algorithm for Matroid Max-Min Allocation}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.2.1}{Intuition for the algorithm}{section.2.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.2}{A detailed procedure}{section.2.2}% 11
-\BOOKMARK [2][-]{subsection.2.2.3}{Correctness of the algorithm}{section.2.2}% 12
-\BOOKMARK [2][-]{subsection.2.2.4}{Termination and runtime}{section.2.2}% 13
-\BOOKMARK [1][-]{section.2.3}{Application to Santa Claus}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.4}{Conclusion}{chapter.2}% 15
-\BOOKMARK [0][-]{chapter.3}{Scheduling with Communication Delays on Identical Machines}{}% 16
-\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 17
-\BOOKMARK [2][-]{subsection.3.1.1}{Our Contributions}{section.3.1}% 18
-\BOOKMARK [2][-]{subsection.3.1.2}{Independent work of Maiti et al}{section.3.1}% 19
-\BOOKMARK [2][-]{subsection.3.1.3}{Our Techniques}{section.3.1}% 20
-\BOOKMARK [2][-]{subsection.3.1.4}{History of the Problem}{section.3.1}% 21
-\BOOKMARK [1][-]{section.3.2}{Preliminaries}{chapter.3}% 22
-\BOOKMARK [2][-]{subsection.3.2.1}{The Sherali-Adams Hierarchy for LPs with Assignment Constraints}{section.3.2}% 23
-\BOOKMARK [2][-]{subsection.3.2.2}{Semimetric Spaces}{section.3.2}% 24
-\BOOKMARK [1][-]{section.3.3}{Approximation for Pprec, pj=1, c-intervalsCmax}{chapter.3}% 25
-\BOOKMARK [2][-]{subsection.3.3.1}{The Linear Program}{section.3.3}% 26
-\BOOKMARK [2][-]{subsection.3.3.2}{Scheduling a Single Batch of Jobs}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.3}{The Complete Algorithm for Pprec, pj=1, c-intervalsCmax }{section.3.3}% 28
-\BOOKMARK [1][-]{section.3.4}{Reductions}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.5}{Integrality Gap for the Compact LP}{chapter.3}% 30
-\BOOKMARK [1][-]{section.3.6}{Minimizing Weighted Sum of Completion Times}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.6.1}{The linear program}{section.3.6}% 32
-\BOOKMARK [2][-]{subsection.3.6.2}{The Rounding Algorithm}{section.3.6}% 33
-\BOOKMARK [0][-]{chapter.4}{Scheduling with Communication Delays on Related Machines}{}% 34
-\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 35
-\BOOKMARK [2][-]{subsection.4.1.1}{Our Contributions}{section.4.1}% 36
-\BOOKMARK [2][-]{subsection.4.1.2}{Technical Challenges}{section.4.1}% 37
-\BOOKMARK [2][-]{subsection.4.1.3}{Our Techniques and Algorithm Overview}{section.4.1}% 38
-\BOOKMARK [2][-]{subsection.4.1.4}{Outline}{section.4.1}% 39
-\BOOKMARK [1][-]{section.4.2}{Preliminaries}{chapter.4}% 40
-\BOOKMARK [2][-]{subsection.4.2.1}{The Sherali-Adams Hierarchy for LPs with Assignment Constraints}{section.4.2}% 41
-\BOOKMARK [2][-]{subsection.4.2.2}{Semimetric Spaces}{section.4.2}% 42
-\BOOKMARK [2][-]{subsection.4.2.3}{Concentration}{section.4.2}% 43
-\BOOKMARK [1][-]{section.4.3}{The Linear Program and Its Properties}{chapter.4}% 44
-\BOOKMARK [2][-]{subsection.4.3.1}{The Linear Program}{section.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.3.2}{Properties of the LP}{section.4.3}% 46
-\BOOKMARK [1][-]{section.4.4}{The Rounding Algorithm for Qprec, pj=1, c wj Cj}{chapter.4}% 47
-\BOOKMARK [2][-]{subsection.4.4.1}{First Batch Scheduling}{section.4.4}% 48
-\BOOKMARK [2][-]{subsection.4.4.2}{Intermediate Batch Scheduling}{section.4.4}% 49
-\BOOKMARK [1][-]{section.4.5}{Proof of Theorem 52}{chapter.4}% 50
-\BOOKMARK [2][-]{subsection.4.5.1}{Main Scheduling Subroutine}{section.4.5}% 51
-\BOOKMARK [2][-]{subsection.4.5.2}{The Complete Algorithm}{section.4.5}% 52
-\BOOKMARK [1][-]{section.4.6}{Reductions}{chapter.4}% 53
-\BOOKMARK [1][-]{section.4.7}{Makespan Minimization on Related Machines}{chapter.4}% 54
-\BOOKMARK [1][-]{section.4.8}{Conclusion}{chapter.4}% 55
-\BOOKMARK [0][-]{section.4.8}{Bibliography}{}% 56
+\BOOKMARK [2][-]{subsection.1.2.1}{Previous work}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.2}{Our contribution}{section.1.2}% 7
+\BOOKMARK [0][-]{chapter.2}{Santa Claus}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{Our contributions}{section.2.1}% 10
+\BOOKMARK [1][-]{section.2.2}{An algorithm for Matroid Max-Min Allocation}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.1}{Intuition for the algorithm}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.2}{A detailed procedure}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.3}{Correctness of the algorithm}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.4}{Termination and runtime}{section.2.2}% 15
+\BOOKMARK [1][-]{section.2.3}{Application to Santa Claus}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.4}{Conclusion}{chapter.2}% 17
+\BOOKMARK [0][-]{chapter.3}{Scheduling with Communication Delays on Identical Machines}{}% 18
+\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.1.1}{Our Contributions}{section.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.1.2}{Independent work of Maiti et al}{section.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.1.3}{Our Techniques}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.4}{History of the Problem}{section.3.1}% 23
+\BOOKMARK [1][-]{section.3.2}{Preliminaries}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.2.1}{The Sherali-Adams Hierarchy for LPs with Assignment Constraints}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.2}{Semimetric Spaces}{section.3.2}% 26
+\BOOKMARK [1][-]{section.3.3}{Approximation for Pprec, pj=1, c-intervalsCmax}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.1}{The Linear Program}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.2}{Scheduling a Single Batch of Jobs}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.3}{The Complete Algorithm for Pprec, pj=1, c-intervalsCmax }{section.3.3}% 30
+\BOOKMARK [1][-]{section.3.4}{Reductions}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.5}{Integrality Gap for the Compact LP}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.6}{Minimizing Weighted Sum of Completion Times}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.6.1}{The linear program}{section.3.6}% 34
+\BOOKMARK [2][-]{subsection.3.6.2}{The Rounding Algorithm}{section.3.6}% 35
+\BOOKMARK [0][-]{chapter.4}{Scheduling with Communication Delays on Related Machines}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.1.1}{Our Contributions}{section.4.1}% 38
+\BOOKMARK [2][-]{subsection.4.1.2}{Technical Challenges}{section.4.1}% 39
+\BOOKMARK [2][-]{subsection.4.1.3}{Our Techniques and Algorithm Overview}{section.4.1}% 40
+\BOOKMARK [2][-]{subsection.4.1.4}{Outline}{section.4.1}% 41
+\BOOKMARK [1][-]{section.4.2}{Preliminaries}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.2.1}{The Sherali-Adams Hierarchy for LPs with Assignment Constraints}{section.4.2}% 43
+\BOOKMARK [2][-]{subsection.4.2.2}{Semimetric Spaces}{section.4.2}% 44
+\BOOKMARK [2][-]{subsection.4.2.3}{Concentration}{section.4.2}% 45
+\BOOKMARK [1][-]{section.4.3}{The Linear Program and Its Properties}{chapter.4}% 46
+\BOOKMARK [2][-]{subsection.4.3.1}{The Linear Program}{section.4.3}% 47
+\BOOKMARK [2][-]{subsection.4.3.2}{Properties of the LP}{section.4.3}% 48
+\BOOKMARK [1][-]{section.4.4}{The Rounding Algorithm for Qprec, pj=1, c wj Cj}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.4.1}{First Batch Scheduling}{section.4.4}% 50
+\BOOKMARK [2][-]{subsection.4.4.2}{Intermediate Batch Scheduling}{section.4.4}% 51
+\BOOKMARK [1][-]{section.4.5}{Proof of Theorem 56}{chapter.4}% 52
+\BOOKMARK [2][-]{subsection.4.5.1}{Main Scheduling Subroutine}{section.4.5}% 53
+\BOOKMARK [2][-]{subsection.4.5.2}{The Complete Algorithm}{section.4.5}% 54
+\BOOKMARK [1][-]{section.4.6}{Reductions}{chapter.4}% 55
+\BOOKMARK [1][-]{section.4.7}{Makespan Minimization on Related Machines}{chapter.4}% 56
+\BOOKMARK [1][-]{section.4.8}{Conclusion}{chapter.4}% 57
+\BOOKMARK [0][-]{section.4.8}{Bibliography}{}% 58

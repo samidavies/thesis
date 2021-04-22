@@ -21,6 +21,11 @@ Chidambaram Annamalai, Christos Kalaitzis, and Ola Svensson.
   on Discrete Algorithms, {SODA} 2015, San Diego, CA, USA, January 4-6, 2015},
   pages 1357--1372, 2015.
 
+\bibitem[AL12]{SAref}
+Miguel~F. Anjos and Jean~B" Lasserre.
+\newblock {\em Handbook on Semidefinite, Conic and Polynomial Optimization}.
+\newblock Springer, 2012.
+
 \bibitem[AMMS08]{ambuhl2008precedence}
 C.~Amb{\"u}hl, M.~Mastrolilli, N.~Mutsanas, and O.~Svensson.
 \newblock Precedence constraint scheduling and connections to dimension theory
