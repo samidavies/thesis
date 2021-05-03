@@ -80,7 +80,7 @@
   Let $M$ denote the number of machines types or equivalently speed classes.
   By standard arguments we can assume that $M =\log(s_{\text{max}}/s_{\text{min}})\leq O(\log m)$ while only losing a constant factor in the approximation guarantee, where $s_{\text{max}}$ and $s_{\text{min}}$ denote the fastest and slowest speeds of machines in the input instance.
   
-  The main result of this paper is the following:
+  The main result of this chapter is the following:
   
   \begin{theorem} \label{thm:main}
   There is a randomized $O(M^2 \cdot \log^2 n)$-approximation algorithm for $Q \mid \Prec, c \mid \sum_{j} w_j C_j$ with expected polynomial running time. When jobs have unit processing lengths, $Q \mid \Prec, c, p_j = 1 \mid \sum_{j} w_j C_j$, the approximation factor of the algorithm improves to  $O(M \cdot \log^2 n )$.
@@ -191,7 +191,7 @@
   
   \subsection{Outline}
   
-  The rest of this paper is organized as follows.
+  The rest of this chapter is organized as follows.
   In Section~\ref{sec:preliminaries} we give preliminaries on hierarchies, semimetric spaces, and a useful version of the Chernoff bound.
   In Section~\ref{sec:lp_and_properties}
   we discuss our linear program and its properties.
@@ -484,7 +484,7 @@ Recall that $K$ is a polytope with assignment constraints and $SA_r(K)$ is the \
   \label{sec:LP-properties}
   
   We will now discuss some properties that are implied by the Sherali-Adams lift.
-  The properties proved in this section, which we use crucially in our rounding algorithms, are the main technical contributions of this paper.
+  The properties proved in this section, which we use crucially in our rounding algorithms, are the main technical contributions of this chapter.
   
   \begin{lemma}\label{lem:Relmetric}
   Let $(x,y,C)$ be a solution to $(\mathsf{LP})$ with $r \geq 5$. Then $d(j_1,j_2) := 1-y_{j_1,j_2}$ is a semimetric.
@@ -936,7 +936,7 @@ Recall that $K$ is a polytope with assignment constraints and $SA_r(K)$ is the \
   which completes the proof.
   \end{proof}
   
-  We finish the proof of main theorem for the weighted sum of completion times of jobs.
+  We finish the proof of the main theorem for the weighted sum of completion times of jobs.
   
   \begin{proof} [Proof of Theorem \ref{thm:LPcompletiontime}]
   For every job $j \in J_0$, from Lemma \ref{lem:completiontimeJ0},  we have $\E[C^A_j] \leq O(M \cdot \log^2 n) \cdot C_j$.
@@ -1048,7 +1048,7 @@ Recall that $K$ is a polytope with assignment constraints and $SA_r(K)$ is the \
   To schedule all jobs in $J^*$, we repeat the clustering procedure $O(\log m)$ times and simply schedule the remaining jobs on the fastest machine. 
   
   \begin{lemma} \label{lem: FullSchedulingOneIntervalViaCKRForRelated}
-    Let $C^* \geq 0$ and $\delta = 1/64\log(2n)$. 
+    Let $C^* \geq 0$ and $\delta = \frac{1}{64\log(2n)}$. 
   Consider the set $J^* \subseteq \{ j \in J' \mid C^* \leq C_j \leq C^*+\delta \cdot c\}$.
     Then there is an algorithm with expected polynomial running time that finds disjoint subsets  $J^{*(k)} \subset J^*$, 
     where $J^{*(k)}$ are jobs assigned to machines of type $k$, 
@@ -1102,7 +1102,8 @@ Recall that $K$ is a polytope with assignment constraints and $SA_r(K)$ is the \
   \frac{T}{c \cdot \delta} \cdot O(\log m \cdot c)  +\sum^{\frac{T-1}{c \cdot \delta}}_{h = 0} \frac{|J_h|}{m\cdot s_{\max}} + \sum_{h,k} \frac{|J_{h}^{(k)}|}{s_k \cdot m_k}=O(\log m \cdot \log n)  \cdot T  +  \frac{|J'|}{m\cdot s_{\max}}+\sum_{k}\frac{|J^{(k)}|}{s_k \cdot m_k}.
   \]
   
-  Here, $J_h^{(k)}$ is the set of jobs assigned on machines of type $k$ when scheduling $J_h$, introduced in lemma~\ref{lem: FullSchedulingOneIntervalViaCKRForRelated}, and $J^{(k)} = \cup_{h=0}^{\frac{T-1}{c \cdot \delta}} J_h^{(k)}$. From lemma~\ref{lem:RSmallNeighborhoodOfClosePoints} and the choice of machine type in the algorithm, 
+  Here, $J_h^{(k)}$ is the set of jobs assigned on machines of type $k$ when scheduling $J_h$, introduced in Lemma~\ref{lem: FullSchedulingOneIntervalViaCKRForRelated}, and $J^{(k)} = \cup_{h=0}^{\frac{T-1}{c \cdot \delta}} J_h^{(k)}$. 
+  From Lemma~\ref{lem:RSmallNeighborhoodOfClosePoints} and the choice of machine type in the algorithm, 
   $\sum_{j \in J^{(k)}} \sum_{t} \sum_{i \in [m_k]} x_{j,i,t} \geq \Omega(1/M) \cdot |J^{(k)}|$. On the other hand, by the constraints of the LP, we have
   
   \[
@@ -1246,7 +1247,7 @@ Recall that $K$ is a polytope with assignment constraints and $SA_r(K)$ is the \
     is trivially bounded by $T^*$. But it is important to note that the maximum \emph{number} of jobs in
     any chain of $\tilde{\prec}$ is bounded by $O(T^*/c)$ as every job is either spread out and hence crosses an interval boundary or it is the unique compact job included in an interval (on that machine).
     Then Lemma~\ref{lem:FindingIntegralAssignmentToSpeedClasses} provides us with an assignment $\pi : \tilde{J} \to [M]$ such that the loads are $D_k \leq 4T^*$ and the maximum chain length is $\Delta \leq 2T^*$.
-    We use the \textsc{Speed-based List Scheduling} algorithm to find a non-preemptive schedule respecting precedence constraints $\tilde{\prec}$ and communication delays while the the makespan is bounded by
+    We use the \textsc{Speed-based List Scheduling} algorithm to find a non-preemptive schedule respecting precedence constraints $\tilde{\prec}$ and communication delays while the makespan is bounded by
     \[
      \sum_{k=1}^M D_k + \sum_{j \in C} \frac{p_j}{s_{\pi(j)}} + (|C|-1) \cdot c \leq 4MT^* + 2T^* + O\Big(\frac{T^*}{c}\Big) \cdot c \leq O(MT^*) 
     \]
@@ -1313,7 +1314,7 @@ Recall that $K$ is a polytope with assignment constraints and $SA_r(K)$ is the \
   
   \section{Conclusion}
   Building off our previous framework for scheduling jobs with precedence constraints and communication delays, 
-  we provide polylogarthmic approximation algorithms for scheduling jobs with communication delays on related machines
+  we provide polylogarithmic approximation algorithms for scheduling jobs with communication delays on related machines
   given the objectives of minimizing makespan or minimizing the weighted sum of completion times.
 
 Perhaps the most interesting open question is whether our approach can yield a constant-factor approximation for $\p \mid \Prec, c \mid \Cmax$.

@@ -817,7 +817,7 @@ to $P(T,\delta_1, \delta_2)$. There is always a feasible integral solution satis
 %Note that $y^*_{ij}$ is smaller than $y_{ij}$, as more machines are covered with large jobs. 
 %With the overall goal of finding some pair feasible to $Q(T)$, we next observe that $x = 1-z'$ is in the base polytope of the comatroid $\pazocal{M}^*$.
 It is well known in matroid theory that  
-the complementary vector $x^* := \mathbb{1} - x'$ lies in $P_{\pazocal{B}(\pazocal{M}^*)}$. 
+the complementary vector $x^* := \mathbf{1} - x'$ lies in $P_{\pazocal{B}(\pazocal{M}^*)}$. 
 Again, it is instructive to think of $x^*_i$ as the decision variable whether 
 child $i$ has to be satisfied with small gifts.
 Finally, the assignments $y^*$ are simply the restriction of $z'$ on the 
@@ -874,7 +874,7 @@ we approach a $(3+\varepsilon)$-approximation.
 \section{Conclusion}
 In this work, we introduced Matroid Max-Min Fair Allocation. 
 for this problem, we construct a new, compact LP to model it, 
-and we prove a $(3+\epsilon)$-approximation, modulo an additive term of $\frac13$ of the most valuable item's value $\frac13 \max_{w in W} p_w$.
+and we prove a $(3+\epsilon)$-approximation, modulo an additive term of $\frac13$ of the most valuable item's value $\frac13 \max_{w \in W} p_w$.
 Our algorithm is a local search based on Haxell's augmenting tree argument.
 Overall, we can use our result on Matroid Max-Min Fair Allocation as a blackbox to obtain a $(4+\epsilon)$-approximation for Santa Claus.
 

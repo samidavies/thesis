@@ -6,45 +6,45 @@ Database file #1: references.bib
 Warning--empty booktitle in Bansalmapsp
 Warning--empty publisher in KulkarniLTY20
 Warning--there's a number but no volume in li2020scheduling
-You've used 84 entries,
+You've used 85 entries,
             2543 wiz_defined-function locations,
-            1106 strings with 23605 characters,
-and the built_in function-call counts, 40748 in all, are:
-= -- 4119
-> -- 2031
-< -- 51
-+ -- 722
-- -- 708
-* -- 2963
-:= -- 6420
-add.period$ -- 267
-call.type$ -- 84
-change.case$ -- 588
-chr.to.int$ -- 82
-cite$ -- 87
-duplicate$ -- 1625
-empty$ -- 2922
-format.name$ -- 792
-if$ -- 8566
+            1113 strings with 24384 characters,
+and the built_in function-call counts, 41028 in all, are:
+= -- 4145
+> -- 2039
+< -- 52
++ -- 724
+- -- 710
+* -- 2979
+:= -- 6467
+add.period$ -- 270
+call.type$ -- 85
+change.case$ -- 593
+chr.to.int$ -- 83
+cite$ -- 88
+duplicate$ -- 1641
+empty$ -- 2947
+format.name$ -- 796
+if$ -- 8624
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 86
-newline$ -- 422
-num.names$ -- 262
-pop$ -- 587
+missing$ -- 88
+newline$ -- 427
+num.names$ -- 265
+pop$ -- 594
 preamble$ -- 1
-purify$ -- 678
+purify$ -- 684
 quote$ -- 0
-skip$ -- 1437
+skip$ -- 1447
 stack$ -- 0
-substring$ -- 2501
-swap$ -- 438
-text.length$ -- 51
-text.prefix$ -- 14
+substring$ -- 2508
+swap$ -- 439
+text.length$ -- 52
+text.prefix$ -- 15
 top$ -- 0
-type$ -- 652
+type$ -- 656
 warning$ -- 3
-while$ -- 386
-width$ -- 89
-write$ -- 1111
+while$ -- 388
+width$ -- 90
+write$ -- 1125
 (There were 3 warnings)

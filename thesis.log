@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  23 APR 2021 14:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 MAY 2021 09:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -667,23 +667,23 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 277.
  (/Users/samidavies/Desktop/UW/Year5/thesis/abstract.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 5.
+(Font)              scaled to size 12.0pt on input line 11.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 7.
+LaTeX Font Info:    Try loading font information for U+msa on input line 13.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 7.
+LaTeX Font Info:    Try loading font information for U+msb on input line 13.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for OMS+rsfs on input line 7.
+LaTeX Font Info:    Try loading font information for OMS+rsfs on input line 13.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/calrsfs/OMSrsfs.fd))
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -780,10 +780,7 @@ Overfull \hbox (5.65268pt too wide) in paragraph at lines 456--459
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
+ [14] [15]
 Underfull \vbox (badness 7759) has occurred while \output is active []
 
  [16]) (/Users/samidavies/Desktop/UW/Year5/thesis/chapters/santaclaus/santaclaus.tex [17] [18
@@ -848,12 +845,12 @@ Underfull \vbox (badness 1478) has occurred while \output is active []
  [30]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31] [32] <chapters/santaclaus/SC_fig2.png, id=678, 602.25pt x 247.92625pt>
+ [31] [32] <chapters/santaclaus/SC_fig2.png, id=680, 602.25pt x 247.92625pt>
 File: chapters/santaclaus/SC_fig2.png Graphic file (type png)
  <use chapters/santaclaus/SC_fig2.png>
 Package pdftex.def Info: chapters/santaclaus/SC_fig2.png used on input line 562.
 (pdftex.def)             Requested size: 284.52756pt x 117.13441pt.
- <chapters/santaclaus/SC_fig3.png, id=680, 560.0925pt x 260.975pt>
+ <chapters/santaclaus/SC_fig3.png, id=682, 560.0925pt x 260.975pt>
 File: chapters/santaclaus/SC_fig3.png Graphic file (type png)
  <use chapters/santaclaus/SC_fig3.png>
 Package pdftex.def Info: chapters/santaclaus/SC_fig3.png used on input line 572.
@@ -948,7 +945,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 558.
 
-[57] <chapters/scheduling1/scheduling_intervals.png, id=949, 768.8725pt x 292.09125pt>
+[57] <chapters/scheduling1/scheduling_intervals.png, id=951, 768.8725pt x 292.09125pt>
 File: chapters/scheduling1/scheduling_intervals.png Graphic file (type png)
  <use chapters/scheduling1/scheduling_intervals.png>
 Package pdftex.def Info: chapters/scheduling1/scheduling_intervals.png used on input line 586.
@@ -961,7 +958,7 @@ Overfull \hbox (15.12589pt too wide) in paragraph at lines 753--760
 \OML/cmm/m/it/12 y[]$ \T1/LinuxLibertineT-TLF/m/n/12 (-20) and $[] \OT1/cmr/m/n/12 = [][] [][] [] \OMS/cmsy/m/n/12 ^^A []$\T1/LinuxLibertineT-TLF/m/n/12 (-20) . By lin-ear-ity it suf-fices to prove that $[][] [] \OMS/cmsy/m/n/12 ^^T
  []
 
-[62] <chapters/scheduling1/transitive_closure.png, id=982, 250.9375pt x 378.41376pt>
+[62] <chapters/scheduling1/transitive_closure.png, id=984, 250.9375pt x 378.41376pt>
 File: chapters/scheduling1/transitive_closure.png Graphic file (type png)
  <use chapters/scheduling1/transitive_closure.png>
 Package pdftex.def Info: chapters/scheduling1/transitive_closure.png used on input line 818.
@@ -1016,17 +1013,17 @@ Overfull \hbox (12.17632pt too wide) in paragraph at lines 1028--1032
 \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; c[] \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 C[]$ \T1/LinuxLibertineT-TLF/m/it/12 us-ing at most $\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 S$ \T1/LinuxLibertineT-TLF/m/it/12 in-ter-vals. Then there is a poly-no-mial time $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 \OT1/cmr/m/n/12 )$\T1/LinuxLibertineT-TLF/m/it/12 -approximation
  []
 
-[67] <chapters/scheduling1/graham_analysis.png, id=1034, 1000.73875pt x 321.2pt>
+[67] <chapters/scheduling1/graham_analysis.png, id=1036, 1000.73875pt x 321.2pt>
 File: chapters/scheduling1/graham_analysis.png Graphic file (type png)
  <use chapters/scheduling1/graham_analysis.png>
 Package pdftex.def Info: chapters/scheduling1/graham_analysis.png used on input line 1081.
 (pdftex.def)             Requested size: 426.79134pt x 136.98605pt.
- [68] [69 </Users/samidavies/Desktop/UW/Year5/thesis/chapters/scheduling1/graham_analysis.png>] [70] <chapters/scheduling1/split_jobs.png, id=1057, 568.1225pt x 121.45375pt>
+ [68] [69 </Users/samidavies/Desktop/UW/Year5/thesis/chapters/scheduling1/graham_analysis.png>] [70] <chapters/scheduling1/split_jobs.png, id=1059, 568.1225pt x 121.45375pt>
 File: chapters/scheduling1/split_jobs.png Graphic file (type png)
  <use chapters/scheduling1/split_jobs.png>
 Package pdftex.def Info: chapters/scheduling1/split_jobs.png used on input line 1206.
 (pdftex.def)             Requested size: 426.79134pt x 91.24388pt.
- [71 </Users/samidavies/Desktop/UW/Year5/thesis/chapters/scheduling1/split_jobs.png>] <chapters/scheduling1/transform.png, id=1064, 764.8575pt x 341.275pt>
+ [71 </Users/samidavies/Desktop/UW/Year5/thesis/chapters/scheduling1/split_jobs.png>] <chapters/scheduling1/transform.png, id=1066, 764.8575pt x 341.275pt>
 File: chapters/scheduling1/transform.png Graphic file (type png)
  <use chapters/scheduling1/transform.png>
 Package pdftex.def Info: chapters/scheduling1/transform.png used on input line 1286.
@@ -1050,20 +1047,20 @@ Overfull \hbox (1.413pt too wide) in paragraph at lines 1532--1538
  []
 
 [79]
-Underfull \vbox (badness 4156) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [80] [81]
-Overfull \hbox (14.2737pt too wide) detected at line 1642
+Overfull \hbox (14.2737pt too wide) detected at line 1640
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 )   [] [] [] \OML/cmm/m/it/12 z[] \OMS/cmsy/m/n/12 ^^U \OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 "\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 U[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 )   [] \OML/cmm/m/it/12 y[] \OMS/cmsy/m/n/12 ^^U \OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 "\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 U[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C\OT1/cmr/m/n/12 )   [] [] \OML/cmm/m/it/12 z[] \OMS/cmsy/m/n/12 ^^U \OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 "
  []
 
 
-Overfull \hbox (2.67792pt too wide) detected at line 1654
+Overfull \hbox (2.67792pt too wide) detected at line 1655
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 ) [] [] [] [] \OMS/cmsy/m/n/12 ^^U \OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 3\OML/cmm/m/it/12 "\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 U[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 ) [] [] \OMS/cmsy/m/n/12 ^^U \OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 3\OML/cmm/m/it/12 "\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 U[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 ) [] [] [] = 1\OML/cmm/m/it/12 :
  []
 
 
-Underfull \vbox (badness 6608) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [82] [83] [84]) (/Users/samidavies/Desktop/UW/Year5/thesis/chapters/scheduling2/scheduling2.tex
 Chapter 4.
@@ -1082,7 +1079,7 @@ Overfull \hbox (5.45714pt too wide) in paragraph at lines 221--221
 []\T1/LinuxLibertineT-TLF/b/n/14.4 The Sherali-Adams Hi-er-ar-chy for LPs with As-sign-ment Con-straints[] 
  []
 
-[95] [96] <chapters/scheduling2/speed_slots.png, id=1308, 900.36375pt x 249.93375pt>
+[95] [96] <chapters/scheduling2/speed_slots.png, id=1310, 900.36375pt x 249.93375pt>
 File: chapters/scheduling2/speed_slots.png Graphic file (type png)
  <use chapters/scheduling2/speed_slots.png>
 Package pdftex.def Info: chapters/scheduling2/speed_slots.png used on input line 404.
@@ -1176,15 +1173,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [118]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/scsl' in size <12> not available
-(Font)              Font shape `T1/LinuxLibertineT-TLF/m/scit' tried instead on input line 1163.
+(Font)              Font shape `T1/LinuxLibertineT-TLF/m/scit' tried instead on input line 1164.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/scit' will be
-(Font)              scaled to size 12.0pt on input line 1163.
+(Font)              scaled to size 12.0pt on input line 1164.
  [119] [120] [121]
 Underfull \vbox (badness 3323) has occurred while \output is active []
 
  [122] [123] [124] [125]) [126] (/Users/samidavies/Desktop/UW/Year5/thesis/thesis.bbl
-Underfull \hbox (badness 4859) in paragraph at lines 50--54
-[]\T1/LinuxLibertineT-TLF/m/n/12 (+20) N. Bansal.  Schedul-ing open prob-lems: Old and new.  MAPSP 2017.
+Underfull \hbox (badness 2229) in paragraph at lines 50--54
+[]\T1/LinuxLibertineT-TLF/m/n/12 (+20) Nikhil Bansal.  Schedul-ing open prob-lems: Old and new.  MAPSP 2017.
  []
 
 [127
@@ -1206,11 +1203,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 353.
  ) 
 Here is how much of TeX's memory you used:
- 14564 strings out of 492995
- 235460 string characters out of 6132704
- 356376 words of memory out of 5000000
- 17083 multiletter control sequences out of 15000+600000
- 205204 words of font info for 322 fonts, out of 8000000 for 9000
+ 14557 strings out of 492995
+ 235261 string characters out of 6132704
+ 356408 words of memory out of 5000000
+ 17084 multiletter control sequences out of 15000+600000
+ 204287 words of font info for 316 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,22n,92p,1649b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exist, replaced by a fixed one
@@ -1250,10 +1247,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_iqbcqn.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/libertine/LinLibertineTBI.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /Users/samidavies/Desktop/UW/Year5/thesis/thesis.pdf (144 pages, 1423269 bytes).
+Output written on /Users/samidavies/Desktop/UW/Year5/thesis/thesis.pdf (144 pages, 1426072 bytes).
 PDF statistics:
- 1784 PDF objects out of 2073 (max. 8388607)
- 1570 compressed objects within 16 object streams
- 406 named destinations out of 1000 (max. 500000)
+ 1786 PDF objects out of 2073 (max. 8388607)
+ 1572 compressed objects within 16 object streams
+ 407 named destinations out of 1000 (max. 500000)
  59897 words of extra memory for PDF output out of 61914 (max. 10000000)
 

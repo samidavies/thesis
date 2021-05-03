@@ -19,7 +19,7 @@ how well a linear program actually captures the problem.
 We accept that it is extremely likely that there exists a separation 
 between the set of ``easy'' and the set of ``hard'' problems, i.e. those for which we can always find an optimal solution in time polynomial in the 
 size of the problem, and those for which we cannot. Skipping over the complexity formalities that can be found in many textbooks, the latter class is referred to as
-the set of \emph{\textbf{NP}-hard} problems.
+the set of \emph{\textbf{NP}-hard} problems~\cite{sipser13}.
 Instead, we work towards obtaining approximate solutions efficiently. 
 An \emph{$\alpha$-approximation algorithm} for an optimization problem is
 an algorithm which given any input instance to the problem is guaranteed to return a solution whose value is
@@ -31,7 +31,7 @@ Designing LPs with small integrality gap---where small depends on the target app
 One normally begins by writing down the basic constraints that arise from the problem statement; let us call this the basic LP for now. 
 To judge the quality of the basic LP, the next step is to try and think of instances that might lead to a larger-than-desired integrality gap.
 If indeed there is an instance certifying that the integrality gap is large, then we have to come up 
-with additional constraints to add the LP that will eliminate the bad instances. 
+with additional constraints to add to the LP that will eliminate the bad instances. 
 Sometimes this ad hoc approach works relatively well, in that coming up with constraints to eliminate bad instances 
 is not too difficult given previous work, intuition, or luck\footnote{In the Santa Claus problem, this ad hoc approach works well enough for our purposes!}.
 
@@ -82,7 +82,7 @@ More properties of the Sherali-Adams hierarchy are discussed in Chapters~\ref{ch
 Problems for which we use approximation algorithms and that are considered in theoretical computer science 
 are often motivated from practical situations. 
 But it is worth noting that in the definition of an $\alpha$-approximation algorithm, 
-we require that the algorithm obtains a solution whose value is only $\alpha$ off for \emph{any} input.
+we require that the algorithm obtains a solution whose value is only an $\alpha$ factor off for \emph{any} input.
 Depending on your persuasion, this may seem like a very strong definition, and maybe impractical... 
 perhaps the inputs that make algorithm design difficult are contrived or never really arise in practice. 
 So we have an---at first glance---strange juxtaposition, where we motivate a problem by saying that it is arises in practice,
@@ -418,7 +418,7 @@ In the identical machines setting, all machines have the same speed and are able
 
 As outlined above, it was not clear how to construct a useful LP using an ad hoc approach.
 Therefore, we used a \emph{Sherali-Adams} lift.
-We consider a time horizon partitioned into $c$-length intervals $I_s$ for $s \in \{0,S-1\}$.
+We consider a time horizon partitioned into $c$-length intervals $I_s$, for $s \in \{0,\ldots,S-1\}$.
 The LP is constructed in two steps; the first step constructs a basic assignment LP and the second step uses the variables produced from lifting the basic LP. % for $P\infty \mid \Prec, p_j=1, c\textrm{-intervals} \mid C_{\max}$ in two steps. 
 Consider the assignment variables
 \[
@@ -490,7 +490,7 @@ We can reduce from the general setting to this special unit-length jobs setting 
 \end{theorem}
 Together Theorems \ref{thm: main_sched1_intro} and \ref{thm: reduction_intro} imply a $O(\log m \cdot \log c)-$approximation algorithm for scheduling with communication delays on identical machines.
 Concurrent with our work was that by Maiti et. al., who study scheduling with communication delays in the duplication setting. 
-They also prove a bound on the advantage that duplication provides to this problem, so overall they too obtain polylogarithmic approximation algorithms for scheduling with communication delays.
+Additionally, they also provide a bound on the advantage that duplication provides to this problem, so overall they too obtain polylogarithmic approximation algorithms for scheduling with communication delays, though with a larger exponent than ours.
 See Chapters \ref{chapter: S1} and \ref{chapter: S2} for a comparison on our work versus that of Maiti et. al.
 
 One last note on this work is that the

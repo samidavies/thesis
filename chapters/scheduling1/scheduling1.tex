@@ -7,7 +7,7 @@ The jobs have precedence constraints, which are given by a partial order $\prec$
 A constraint $j \prec j'$ encodes that job $j'$ can only start after job $j$ is completed.
 The goal is to find a schedule of jobs that minimizes {\em makespan}, which is the completion time of the last job.
 This problem is denoted\footnote{
-	Throughout the paper we use the standard scheduling three-field notation~\cite{GLLR79,VeltmanLL90}.
+	Throughout the chapter we use the standard scheduling three-field notation~\cite{GLLR79,VeltmanLL90}.
 	The respective fields
 	denote:
 	\textbf{(1)
@@ -21,7 +21,7 @@ In a seminal result from 1966, Graham ~\cite{GrahamListScheduling1966} showed th
 %The algorithm simply  computes an arbitrary topological ordering of the jobs, and whenever a machine becomes idle selects the first
 %available job from the list. 
 By now, our understanding of the approximability of this basic problem is almost complete: 
-it had been known since the late `70s, due to a result by Lenstra and Rinnooy Kan~\cite{LR78}, that it is NP-hard to obtain better than $4/3$-approximation, and in 2010 Svensson~\cite{Svensson10} showed that, assuming a variant of the Unique Games Conjecture~\cite{BansalK10}, it is NP-hard to get a $(2-\varepsilon)$-approximation for any $\varepsilon > 0$.
+it had been known since the late `70s, due to a result by Lenstra and Rinnooy Kan~\cite{LR78}, that it is \textbf{NP}-hard to obtain better than $4/3$-approximation, and in 2010 Svensson~\cite{Svensson10} showed that, assuming a variant of the Unique Games Conjecture~\cite{BansalK10}, it is \textbf{NP}-hard to get a $(2-\varepsilon)$-approximation for any $\varepsilon > 0$.
 
 The above precedence-constrained scheduling problem models the task of distributing workloads onto multiple processors or servers, which is ubiquitous in computing.
 This basic setting takes the dependencies between work units into account, but not the data transfer costs between machines, which is critical in applications. 
@@ -47,7 +47,7 @@ Here  we are  given a {\em communication delay parameter} $c \in  \setZ_{\ge 0}$
 On the other hand,  if $j$ and $j'$ are scheduled on the {same machine}, then $j'$ can start executing immediately after $j$ finishes. 
 In a closely related problem, denoted by $\p \infty \mid \Prec, c \mid \Cmax$, a schedule can use as many machines as desired.
 The goal is to schedule jobs {\em non-preemptively} so as to minimize the makespan.  In a non-preemptive schedule, each job $j$ needs to be  assigned to a single machine and executed during $p_j$ consecutive timeslots.
-The problems $\p \mid \Prec, c \mid \Cmax$ and $\p \infty \mid \Prec, c \mid \Cmax$ are the focus of this paper.
+The problems $\p \mid \Prec, c \mid \Cmax$ and $\p \infty \mid \Prec, c \mid \Cmax$ are the focus of this chapter.
 
 Despite its theoretical significance and practical relevance, very little is known about the communication delay setting.
 A direct application of Graham's~\cite{GrahamListScheduling1966} list scheduling algorithm yields a $(c+2)$-approximation,
@@ -63,7 +63,7 @@ In a recent MAPSP 2017 survey talk,  Bansal~\cite{Bansalmapsp} highlighted the l
 
 \subsection{Our Contributions}
 
-The main result of this paper is the following:
+The main result of this chapter is the following:
 
 \begin{theorem} \label{thm:main_sched1}
 There is a randomized $O(\log c \cdot \log m)$-approximation algorithm for $\p \mid \Prec, c \mid \Cmax$ with expected polynomial running time, where $c, p_j \in \setN$.
@@ -216,7 +216,7 @@ While this principle has been known since a long time, there are very few result
 \fi
 
 \paragraph{Hardness.}
-Hoogeveen, Lenstra and Veltman~\cite{HoogeveenLV94} showed that even the special case $\p \infty \mid \Prec, p_j=1, c=1 \mid \Cmax$ is NP-hard to approximate to a factor  better than $7/6$.
+Hoogeveen, Lenstra and Veltman~\cite{HoogeveenLV94} showed that even the special case $\p \infty \mid \Prec, p_j=1, c=1 \mid \Cmax$ is \textbf{NP}-hard to approximate to a factor  better than $7/6$.
 For the case with bounded number of machines (the $\p$~variant)
 %setting $\p \mid \Prec, p_j=1, c=1 \mid \Cmax$ (the number of processors being part of the input)
 they show $5/4$-hardness.
@@ -784,7 +784,7 @@ Fix $j^* \in J$ and abbreviate $U := \{ j \in J \mid d(j,j^*) \leq \beta\}$ for 
 We now come to the  main building block of our algorithm. We consider a subset $J^*$ of
 jobs whose LP completion times $C_j$ are very close (within a $\Theta(\frac{1}{\log(c)})$ term of each other)
 and show we can schedule half of these jobs in a single length-$2c$ interval. 
-The following lemma is the main technical contribution of the paper.
+The following lemma is the main technical contribution of the chapter.
 
 \begin{lemma} \label{lem:SchedulingOneIntervalViaCKR}
   Let $(x,y,C) \in Q(r)$ with $r \geq 5$ and let $0<\delta \leq \frac{1}{64\log(4c)}$ be a parameter. Let $C^* \geq 0$ and set
@@ -1077,7 +1077,7 @@ We denote  $\pazocal{Q}(J)$ as the set of all chains in $J$ w.r.t. precedence or
   % Let $j_l$ be a job which finishes last and $t_{j_l}$ its starting time.
   % Let $j_{l-1}$ be a predecessor of $j_l$ which finishes last. Then, by our precedence constraint, we have $t_{j_l}\ge t_{j_{l-1}}+p_{j_{l-1}}$. Moreover, if they are scheduled on different machines, then $t_{j_l}\ge t_{j_{l-1}}+p_{j_{l-1}}+C$.
 	\begin{figure}
-		\begin{center}
+	\begin{center}
             \includegraphics[width=15cm]{chapters/scheduling1/graham_analysis}
 % 		\ifrenderfigures
 % 			\psset{unit=0.6cm}
@@ -1553,8 +1553,6 @@ and  $k \geq 0$, let $J_k := \{j \in J : k \cdot \delta \leq C_j < k \cdot \delt
 We give a separate  algorithm for scheduling jobs in $J_0$ within an interval of length at most $O(\log n) \cdot c$.
 Now consider the remaining jobs.
 For $k = 1,2,...$, we schedule jobs in the set $J_k$  using the algorithm from Section~\ref{sec:TheCompleteAlgorithm},
-
-
 inserting $c$ empty time slots between the schedule of jobs in the set $J_k$ and $J_{k+1}$.
 Let $C^{A}_j$ denote the completion time of job $j$ in our algorithm.
 
@@ -1645,8 +1643,11 @@ Intuitively, this means that we have $|U^*| > 2\theta^*$ many jobs that the LP s
 on slots $\{1,\ldots,\theta^*\}$ while (B) means that the jobs are almost fully scheduled on the same machine.
 
 As before, we will use the properties of the Sherali-Adams hierarchy to formally derive a contradiction.
-We know by Lemma~\ref{lem:PropertiesOfSAforSchedulingWithCommDelaysLP}\footnote{Strictly speaking, Lemma~\ref{lem:PropertiesOfSAforSchedulingWithCommDelaysLP} describes the SA properties for LP $Q(r)$, but an absolutely analogous statement holds for $\tilde{Q}(r)$.} that there is a distribution  $(\tilde{x},\tilde{z},\tilde{y}) \sim \pazocal{D}(j_N)$ so that $\E[\tilde{x}_{j,i,s}] = x_{j,i,s}$, $\E[\tilde{z}_{j,i,t}]=z_{j,i,t}$ and $\E[\tilde{y}_{j_1,j_2}]=y_{j_1,j_2}$ while the variables involving job $j_N$ are integral, i.e.
-
+We know by Lemma~\ref{lem:PropertiesOfSAforSchedulingWithCommDelaysLP}\footnote{Strictly speaking, 
+Lemma~\ref{lem:PropertiesOfSAforSchedulingWithCommDelaysLP} describes the SA properties for LP $Q(r)$, 
+but an absolutely analogous statement holds for $\tilde{Q}(r)$.} that there is a distribution  $(\tilde{x},\tilde{z},\tilde{y}) \sim \pazocal{D}(j_N)$ 
+so that $\E[\tilde{x}_{j,i,s}] = x_{j,i,s}$, $\E[\tilde{z}_{j,i,t}]=z_{j,i,t}$ and $\E[\tilde{y}_{j_1,j_2}]=y_{j_1,j_2}$ 
+while the variables involving job $j_N$ are integral, i.e.
 $\tilde{x}_{j_N,i,s},\tilde{z}_{j_N,i,t} \in \{ 0,1\}$.
 Consider the three events
   \[
