@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex thesis"] 1620061004 "thesis.aux" "thesis.bbl" "thesis" 1620061009
+["bibtex thesis"] 1620061004 "thesis.aux" "thesis.bbl" "thesis" 1620061971
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/base/alpha.bst" 1480098433 23907 a5f93555796fb564b924339521f10a7c ""
   "references.bib" 1620061000 56569 d2e4503bc9cfecef01f096923eca8427 ""
   "thesis.aux" 1620061008 30754 ae6df4394e1999b2db4eb37b9dbefa8c ""
   (generated)
-  "thesis.blg"
   "thesis.bbl"
-["pdflatex"] 1620061005 "/Users/samidavies/Desktop/UW/Year5/thesis/thesis.tex" "/Users/samidavies/Desktop/UW/Year5/thesis/thesis.pdf" "thesis" 1620061009
+  "thesis.blg"
+["pdflatex"] 1620061005 "/Users/samidavies/Desktop/UW/Year5/thesis/thesis.tex" "/Users/samidavies/Desktop/UW/Year5/thesis/thesis.pdf" "thesis" 1620061971
   "/Users/samidavies/Desktop/UW/Year5/thesis/thesis.aux" 1620061008 30754 ae6df4394e1999b2db4eb37b9dbefa8c ""
   "/Users/samidavies/Desktop/UW/Year5/thesis/thesis.tex" 1619483370 9708 9b3e5ab67e8e75a5fd83ebb1f36a2c5d ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc" 1490133665 2921 8ca0eb0831f9bc5da080d3697cfe67bf ""
@@ -234,10 +234,10 @@
   "thesis.tex" 1619483370 9708 9b3e5ab67e8e75a5fd83ebb1f36a2c5d ""
   "thesis.toc" 1620061008 5965 ee029bd4ccd968e3ec5b73ca2744a527 ""
   (generated)
-  "thesis.pdf"
+  "thesis.aux"
   "/Users/samidavies/Desktop/UW/Year5/thesis/thesis.pdf"
   "thesis.out"
-  "thesis.aux"
-  "thesis.log"
-  "thesis.toc"
   "/Users/samidavies/Desktop/UW/Year5/thesis/thesis.log"
+  "thesis.toc"
+  "thesis.pdf"
+  "thesis.log"
